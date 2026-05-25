@@ -36,3 +36,31 @@ key[PageDown]="${terminfo[knp]}"
 # Fix Ctrl+Left and Ctrl+Right arrow keys to jump words
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
+
+# -------------------------------------------------------------
+# History Configuration
+# -------------------------------------------------------------
+
+# Where zsh should save your history log file
+HISTFILE="$HOME/.zsh_history"
+
+# The maximum number of events to store in the internal history list
+HISTSIZE=10000
+
+# The maximum number of history events to save in the history file
+SAVEHIST=10000
+
+# Share history across all open terminal windows/tabs immediately
+setopt SHARE_HISTORY
+
+# Append to the history file instead of overwriting it
+setopt APPEND_HISTORY
+
+# Expire duplicate entries first when trim thresholds are met
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Do not write duplicate entries to the history file
+setopt HIST_IGNORE_DUPS
+
+# Remove extra blanks from each command line before adding to history
+setopt HIST_REDUCE_BLANKS
