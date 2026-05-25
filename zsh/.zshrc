@@ -64,3 +64,18 @@ setopt HIST_IGNORE_DUPS
 
 # Remove extra blanks from each command line before adding to history
 setopt HIST_REDUCE_BLANKS
+
+# -------------------------------------------------------------
+# Tab Completion System
+# -------------------------------------------------------------
+
+# Enable Zsh's advanced completion system
+autoload -Uz compinit
+compinit
+
+# Optional but highly recommended: Enable an interactive menu 
+# allowing you to use arrow keys to pick completion items
+zstyle ':completion:*' menu select
+
+# Make completion case-insensitive (e.g., typing 'git ST' matches 'git status')
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
