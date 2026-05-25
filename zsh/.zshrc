@@ -79,3 +79,30 @@ zstyle ':completion:*' menu select
 
 # Make completion case-insensitive (e.g., typing 'git ST' matches 'git status')
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# -------------------------------------------------------------
+# Colors and Modern 'ls' (eza) Aliases
+# -------------------------------------------------------------
+
+# Enable native Zsh terminal coloring capabilities
+export CLICOLOR=1
+autoload -Uz colors && colors
+
+# Replace standard 'ls' with 'eza' (including icons and headers)
+if (( $+commands[eza] )); then
+    alias ls='eza --icons --header'
+    alias ll='eza -lh --icons --header'
+    alias la='eza -a --icons --header'
+    alias lla='eza -lah --icons --header'
+elif (( $+commands[exa] )); then
+    # Fallback just in case your system uses the older 'exa' binary
+    alias ls='exa --icons --header'
+    alias ll='exa -lh --icons --header'
+    alias la='exa -a --icons --header'
+    alias lla='exa -lah --icons --header'
+else
+    # Fallback to standard colored ls if eza/exa aren't found globally
+    alias ls='ls --color=auto'
+    alias ll='ls -lh --color=auto'
+    alias la='ls -A --color=auto'
+fi
