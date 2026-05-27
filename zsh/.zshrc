@@ -106,3 +106,11 @@ else
     alias ll='ls -lh --color=auto'
     alias la='ls -A --color=auto'
 fi
+
+
+# -----------------------------------------------------
+# SSH Alias for Kitty (Terminfo) to keep keybindings
+# -----------------------------------------------------
+if [ "$TERM" = "xterm-kitty" ]; then
+    alias ssh="kitty +kitten ssh"
+fi
