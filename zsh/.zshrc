@@ -114,3 +114,7 @@ fi
 if [ "$TERM" = "xterm-kitty" ]; then
     alias ssh="kitty +kitten ssh"
 fi
+
+# Waybar reload alias
+#
+alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
