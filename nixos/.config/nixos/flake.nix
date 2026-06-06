@@ -38,7 +38,7 @@
               ];
               home.stateVersion = "26.06"; # Match your system's underlying state constraint
             };
-          };
+          }
         ];
       };
     };
