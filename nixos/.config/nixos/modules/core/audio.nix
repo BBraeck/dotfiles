@@ -11,9 +11,4 @@
     pulse.enable = true;
     jack.enable = true; # Encompasses complete modern audio routing compatibility
   };
-
-  # Install EasyEffects system-wide so it integrates natively with the PipeWire daemon
-  environment.systemPackages = with pkgs; [
-    easyeffects
-  ];
 }

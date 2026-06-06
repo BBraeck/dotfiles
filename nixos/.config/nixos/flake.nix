@@ -1,7 +1,6 @@
 {
-  description = "Minimal Modular NixOS Configuration";
+  description = "Modular NixOS Configuration";
 
-  # 1. Inputs: Where we fetch our ingredients
   inputs = {
     # We use the unstable channel for the latest Hyprland and developer tools (uv, ruff)
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -16,12 +15,11 @@
   # 2. Outputs: What we build with those ingredients
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      # "nixos-vm" is the hostname we will use for your virtual machine testing phase
-      nixos-vm = nixpkgs.lib.nixosSystem {
+      t490s = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           # The core entry point where our system architecture begins
-          ./configuration.nix
+          ./hosts/t490s/configuration.nix
 
           {
             nixpkgs.config.allowUnfree = true;
@@ -36,9 +34,50 @@
             # Map your home user modules cleanly into your actual target username
             home-manager.users.bbrae = { ... }: {
               imports = [
-                ./modules/home/shell.nix
-                ./modules/home/apps.nix
+                ./modules/home/ai.nix
+                ./modules/home/browsers.nix
                 ./modules/home/dev.nix
+                ./modules/home/graphics.nix
+                ./modules/home/media.nix
+                ./modules/home/office.nix
+                ./modules/home/screen.nix
+                ./modules/home/shell.nix
+                ./modules/home/transmission.nix
+              ];
+              home.stateVersion = "26.05"; # Match your system's underlying state constraint
+            };
+          }
+        ];
+      };
+      # "nixos-vm" is the hostname we will use for your virtual machine testing phase
+      nixos-vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          # The core entry point where our system architecture begins
+          ./hosts/vm-test/configuration.nix
+
+          {
+            nixpkgs.config.allowUnfree = true;
+          }
+
+          # Inject Home Manager module directly into the system configuration pipeline
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            
+            # Map your home user modules cleanly into your actual target username
+            home-manager.users.bbrae = { ... }: {
+              imports = [
+                ./modules/home/ai.nix
+                ./modules/home/browsers.nix
+                ./modules/home/dev.nix
+                ./modules/home/graphics.nix
+                ./modules/home/media.nix
+                ./modules/home/office.nix
+                ./modules/home/screen.nix
+                ./modules/home/shell.nix
+                ./modules/home/transmission.nix
               ];
               home.stateVersion = "26.05"; # Match your system's underlying state constraint
             };

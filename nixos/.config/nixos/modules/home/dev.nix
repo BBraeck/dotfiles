@@ -2,37 +2,12 @@
 
 {
   home.packages = with pkgs; [
-    # Core Infrastructure
-    gnumake
-    openssh
-
-    # Lightweight Text Editing 
-    gnome-text-editor  # Your chosen fast GUI editor
-    vim
-    nano
-
     # Astral Python Engineering Ecosystem
     uv                 # Fast Python packaging engine
     ruff               # Super-fast Linter/Formatter
     ty                 # Super-fast type checker
+    vscode             # VSCode CLI for remote development and extension management
   ];
-
-  # Declarative Git Profile Configuration
-  programs.git = {
-    enable = true;
-    settings = {
-      user = {
-        name = "braeckeveldt";       # Adjust to your actual identity profile
-        email = "bertrandbraeckeveldt@gmail.com";
-      };
-    };
-  };
-
-  # Declarative Neovim Engine Setup
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true; # Configures nvim as the system fallback $EDITOR
-  };
 
   # Declarative VSCode Engine Setup
   programs.vscode = {
