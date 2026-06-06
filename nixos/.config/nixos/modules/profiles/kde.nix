@@ -20,7 +20,7 @@
     # You requested a terminal: Konsole is KDE's ultra-powerful native terminal.
     # However, since your shared user profile relies on Kitty, we will include Konsole 
     # as a system fallback, but Kitty will run flawlessly here too!
-    konsole
+    kdePackages.konsole
     
     # Core Utilities bundled out of preference
     kdePackages.spectacle  # Screenshot utility

@@ -14,16 +14,9 @@
     gnutar
     rsync
 
-    # Version control systems
-    git
-
     # Terminal-based text editors
     nano
     vim
-    neovim
-
-    # Terminal-based file manager
-    yazi
   ];
 
   # Enable Yazi file manager cleanly via Home Manager
