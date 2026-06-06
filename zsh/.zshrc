@@ -118,3 +118,5 @@ fi
 # Waybar reload alias
 #
 alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
+
+. "$HOME/.local/share/../bin/env"
