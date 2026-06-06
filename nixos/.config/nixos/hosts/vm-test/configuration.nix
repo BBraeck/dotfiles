@@ -5,7 +5,7 @@
   imports = [
     ../common.nix
     ../../modules/core/audio.nix
-    ../../modules/core/containarization.nix
+    ../../modules/core/containerization.nix
     ../../modules/profiles/kde.nix
   ];
 

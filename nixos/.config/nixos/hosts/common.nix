@@ -3,7 +3,6 @@
 {
   imports = [
     ../modules/core/common.nix
-    ../home/common.nix
     ../users/bbrae/default.nix
   ];
 
