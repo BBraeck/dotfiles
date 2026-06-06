@@ -12,7 +12,7 @@
     lazydocker
   ];
 
-  containerization = {
+  virtualisation = {
     docker = {
       enable = true;
       # Automatically purges unused container networks and images weekly to maintain a minimal system

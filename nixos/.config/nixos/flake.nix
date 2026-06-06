@@ -34,6 +34,7 @@
             # Map your home user modules cleanly into your actual target username
             home-manager.users.bbrae = { ... }: {
               imports = [
+                ./users/bbrae/default.nix
                 ./modules/home/ai.nix
                 ./modules/home/browsers.nix
                 ./modules/home/dev.nix
@@ -69,6 +70,7 @@
             # Map your home user modules cleanly into your actual target username
             home-manager.users.bbrae = { ... }: {
               imports = [
+                ./users/bbrae/default.nix
                 ./modules/home/ai.nix
                 ./modules/home/browsers.nix
                 ./modules/home/dev.nix

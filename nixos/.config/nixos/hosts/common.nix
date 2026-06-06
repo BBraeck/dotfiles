@@ -3,7 +3,6 @@
 {
   imports = [
     ../modules/core/common.nix
-    ../users/bbrae/default.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

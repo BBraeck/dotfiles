@@ -11,7 +11,7 @@
     curl
     wget
     unzip
-    tar
+    gnutar
     rsync
 
     # Version control systems
