@@ -23,6 +23,10 @@
           # The core entry point where our system architecture begins
           ./configuration.nix
 
+          {
+            nixpkgs.config.allowUnfree = true;
+          }
+
           # Inject Home Manager module directly into the system configuration pipeline
           home-manager.nixosModules.home-manager
           {
@@ -36,7 +40,7 @@
                 ./modules/home/apps.nix
                 ./modules/home/dev.nix
               ];
-              home.stateVersion = "26.06"; # Match your system's underlying state constraint
+              home.stateVersion = "26.05"; # Match your system's underlying state constraint
             };
           }
         ];

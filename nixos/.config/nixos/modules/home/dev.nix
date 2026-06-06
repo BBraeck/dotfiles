@@ -20,8 +20,12 @@
   # Declarative Git Profile Configuration
   programs.git = {
     enable = true;
-    userName = "Your Name";       # Adjust to your actual identity profile
-    userEmail = "your@email.com";
+    settings = {
+      user = {
+        name = "braeckeveldt";       # Adjust to your actual identity profile
+        email = "bertrandbraeckeveldt@gmail.com";
+      };
+    };
   };
 
   # Declarative Neovim Engine Setup
@@ -34,12 +38,10 @@
   programs.vscode = {
     enable = true;
     # Clean injection pattern for extensions (prevents imperative marketplace clutter)
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       charliermarsh.ruff   # Native Astral Ruff IDE integration
       ms-python.python     # Standard Python interpreter support
-      astral-sh.ty         # Ty extension
       ms-vscode-remote.remote-containers # Remote dev containers
-      Continue.continue    # Continue
       tamasfe.even-better-toml # toml rendering
     ];
   };

@@ -8,7 +8,7 @@
     firefox
 
     # Document & Office Suites
-    wps-office
+    wpsoffice
     evince             # PDF viewer
 
     # Media Pipeline (Your chosen layout)
@@ -19,6 +19,15 @@
     # File Management & Monitoring
     nautilus           # Graphical File Manager
     btop               # Real-time System Monitor
+    htop               # Lightweight system monitor
+    tree               # CLI directory structure visualizer
+
+    # Backup manager
+    restic
+
+    # Docker utilities
+    dtop
+    lazydocker
   ];
 
   # Enable Yazi file manager cleanly via Home Manager
