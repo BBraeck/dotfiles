@@ -37,6 +37,8 @@
                 ./users/bbrae/default.nix
                 ./modules/home/ai.nix
                 ./modules/home/browsers.nix
+                ./modules/home/common.nix
+                ./modules/home/containerization.nix
                 ./modules/home/dev.nix
                 ./modules/home/graphics.nix
                 ./modules/home/media.nix
@@ -73,6 +75,8 @@
                 ./users/bbrae/default.nix
                 ./modules/home/ai.nix
                 ./modules/home/browsers.nix
+                ./modules/home/common.nix
+                ./modules/home/containerization.nix
                 ./modules/home/dev.nix
                 ./modules/home/graphics.nix
                 ./modules/home/media.nix

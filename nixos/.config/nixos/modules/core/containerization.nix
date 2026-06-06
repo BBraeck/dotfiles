@@ -7,11 +7,6 @@
     podman
   ];
 
-  home.packages = with pkgs; [
-    dtop
-    lazydocker
-  ];
-
   virtualisation = {
     docker = {
       enable = true;
